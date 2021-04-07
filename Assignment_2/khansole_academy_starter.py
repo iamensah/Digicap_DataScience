@@ -13,16 +13,21 @@ import random
 # ********************************** YOUR CODE GOES BELOW HERE *********************************************************
 
 print("I am thinking of a number between 1 and 99")
-# Generate two random operands number between 10 and 99
 count_correct = 0
-while True:
+while True:    
     try:
         print('')
+        # Generate two random operands number between 10 and 99
         operand_1 = random.randint(10, 99)
         operand_2 = random.randint(10, 99)
         print("What is {} + {}?".format(operand_1, operand_2))
         # User enter a  answer
         user_answer = int(input('Your Answer: '))
+        #Check if user answered an integer
+    except ValueError as ve:
+        count_correct = 0
+        print("Enter a valid integer")
+    else:
         correct_answer = operand_1 + operand_2
         if user_answer == correct_answer:
             count_correct += 1
@@ -32,9 +37,7 @@ while True:
             else:
                 print("Congratulations! You mastered addition")
                 break
-
         else:
-            raise Exception()
-    except:
-        count_correct = 0
+            count_correct = 0
         print('Incorrect. The expected answer is {}'.format(correct_answer))
+
