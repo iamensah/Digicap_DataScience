@@ -12,7 +12,7 @@ import random
 
 # ********************************** YOUR CODE GOES BELOW HERE *********************************************************
 
-print("I am thinking of a number between 1 and 99")
+print("Mastering two(2) digits addition:")
 count_correct = 0
 while True:    
     try:
@@ -24,7 +24,7 @@ while True:
         # User enter a  answer
         user_answer = int(input('Your Answer: '))
         #Check if user answered an integer
-    except ValueError as ve:
+    except ValueError:
         count_correct = 0
         print("Enter a valid integer")
     else:

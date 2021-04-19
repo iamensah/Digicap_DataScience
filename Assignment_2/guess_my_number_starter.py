@@ -17,6 +17,9 @@ while True:
         # User enter a guess number
         user_guess = int(input('Enter a guess: '))
         # Check if the number is between 1 and 99
+    except ValueError:
+        print('Please input valid integer between(1 and 99)')
+    else:
         if 1 <= user_guess <= 99:
             if user_guess > random_guess:
                 print("Your Guess is TOO HIGH")
@@ -27,9 +30,3 @@ while True:
             else:
                 print("Congrat! The number was:", random_guess)
                 break
-        # if number is not between 1 and 99, raise exception for user to enter an
-        else:
-            raise Exception()
-    except:
-        print(".....Oooooopps Try again")
-        print('Please input valid integer between(1 and 99)')
